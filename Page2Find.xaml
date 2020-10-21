@@ -1,0 +1,38 @@
+﻿<Page x:Class="PhoneBDAutumn.Page2Find"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PhoneBDAutumn"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page2Find">
+
+    <Grid>
+        <Label Content="ПОИСКОВИК" HorizontalAlignment="Left" Margin="356,263,0,0" VerticalAlignment="Top"/>
+
+        <ListView Name="FileInfoView" HorizontalAlignment="Left" Height="382" Margin="185,58,0,0" VerticalAlignment="Top" Width="605" SelectionChanged="FileInfoView_SelectionChanged">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Id" DisplayMemberBinding ="{Binding Path = Id}"/>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding ="{Binding Path = Name}"/>
+                    <GridViewColumn Header="Фамилия" DisplayMemberBinding ="{Binding Path = Surname}"/>
+                    <GridViewColumn Header="Отчество" DisplayMemberBinding ="{Binding Path = Dadname}"/>
+                    <GridViewColumn Header="Группа" DisplayMemberBinding ="{Binding Path = Group}"/>
+                    <!--<GridViewColumn Header="Моб. Телефон" DisplayMemberBinding ="{Binding Path = Mphone}"/>
+                    <GridViewColumn Header="Дом. Телефон" DisplayMemberBinding ="{Binding Path = Hphone}"/>-->
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding ="{Binding Path = Adress}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Visibility="Hidden" Content="Button" HorizontalAlignment="Left" Margin="63,87,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="Поиск по номеру" HorizontalAlignment="Left" Margin="63,147,0,0" VerticalAlignment="Top" Width="75" Click="SearchForNumBtn"/>
+        <Button Content="Изменить" HorizontalAlignment="Left" Margin="63,111,0,0" VerticalAlignment="Top" Width="75" Click="OpenEditor"/>
+        <TextBox Name="surnameBox" MaxLength="1" HorizontalAlignment="Left" Height="23" Margin="115,205,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="23" KeyDown="InputCheck" GotFocus="TextBox_GotFocus" GotMouseCapture="surnameBox_GotMouseCapture" TextChanged="FindByFam"/>
+        <Label Content="Буква Ф" HorizontalAlignment="Left" Margin="63,205,0,0" VerticalAlignment="Top"/>
+        <TextBox Visibility="Hidden" Name="phoneBox" MaxLength="11" HorizontalAlignment="Left" Height="23" Margin="63,249,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="82" TextChanged="FindByPhone"/>
+        <Button Content="Отчёт" HorizontalAlignment="Left" Margin="63,331,0,0" VerticalAlignment="Top" Width="75" Click="CreateReportBtn"/>
+        <!--<Label Content="Номер" HorizontalAlignment="Left" Margin="10,249,0,0" VerticalAlignment="Top"/>-->
+        <Button Content="Изменить номер" HorizontalAlignment="Left" Margin="63,331,0,0" VerticalAlignment="Top" Width="125" Click="NumEditorBtn"/>
+    </Grid>
+</Page>

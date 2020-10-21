@@ -1,0 +1,26 @@
+﻿<Page x:Class="PhoneBDAutumn.ReportLog"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PhoneBDAutumn"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="ReportLog">
+
+    <Grid>
+        <ListView Name="FileInfoView" HorizontalAlignment="Left" Height="382" Margin="105,30,0,0" VerticalAlignment="Top" Width="605">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Группа" DisplayMemberBinding ="{Binding Path = Group}"/>
+                    <GridViewColumn Header="Фамилия" DisplayMemberBinding ="{Binding Path = Surname}"/>
+                    <GridViewColumn Header="Имя" DisplayMemberBinding ="{Binding Path = Name}"/>
+                    <GridViewColumn Header="Отчество" DisplayMemberBinding ="{Binding Path = Dadname}"/>
+                    <GridViewColumn Header="Моб. Телефон" DisplayMemberBinding ="{Binding Path = Mphone}"/>
+                    <GridViewColumn Header="Дом. Телефон" DisplayMemberBinding ="{Binding Path = Hphone}"/>
+                    <GridViewColumn Header="Адрес" DisplayMemberBinding ="{Binding Path = Adress}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

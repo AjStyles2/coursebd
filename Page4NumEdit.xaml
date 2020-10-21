@@ -1,0 +1,29 @@
+﻿<Page x:Class="PhoneBDAutumn.Page4NumEdit"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:PhoneBDAutumn"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Page4NumEdit">
+
+    <Grid>
+        <ListView Name="FileNumEdView" HorizontalAlignment="Left" Height="225" Margin="239,81,0,0" VerticalAlignment="Top" Width="288" SelectionChanged="SelectionChangeSimple">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Тип" DisplayMemberBinding ="{Binding Path = Id_Type}"/>
+                    <GridViewColumn Header="Номер" DisplayMemberBinding ="{Binding Path = Phone}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Name="btnrem" IsEnabled="False" Content="Удалить" HorizontalAlignment="Left" Margin="134,287,0,0" VerticalAlignment="Top" Width="75" Click="RemoveNumBtn"/>
+        <TextBox Name="txnumchange" IsEnabled="False" HorizontalAlignment="Left" Height="23" Margin="563,156,0,0" TextWrapping="Wrap" Text="Номер" VerticalAlignment="Top" Width="120"/>
+        <Button Name="btnsave" IsEnabled="False" Content="Сохранить" HorizontalAlignment="Left" Margin="563,211,0,0" VerticalAlignment="Top" Width="76" Click="UpdateNumBtn"/>
+        <ComboBox Name="typeBox" Height="23" VerticalAlignment="Top" Margin="688,156,0,0">
+            <TextBlock>Мобильный</TextBlock>
+            <TextBlock>Домашний</TextBlock>
+        </ComboBox>
+        <Button Content="Добавить" HorizontalAlignment="Left" Margin="134,108,0,0" VerticalAlignment="Top" Width="75" Click="AddNewNumBtn"/>
+    </Grid>
+</Page>
